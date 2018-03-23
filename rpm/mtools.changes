@@ -1,0 +1,15 @@
+* Tue Mar 20 2018 Martin Kampas <martin.kampas@jolla.com> - 4.0.12
+- Fix build on aarch64. Contributes to JB#36213
+
+* Fri Feb 11 2011 Yi Yang <yi.y.yang@intel.com> - 4.0.12
+- Fix label set error (BMC#11746)
+
+* Mon Feb 01 2010 Yi Yang <yi.y.yang@intel.com> - 4.0.12
+- Update to 4.0.12
+
+* Tue Feb 17 2009 Anas Nashif <anas.nashif@intel.com> - 4.0.4
+- Update to 4.0.4
+
+* Fri Sep 12 2008 vivian zhang <vivian.zhang@intel.com> - 3.9.11
+- add check for the info file before installing it in post/preun
+- add %doc to man/info in spec file

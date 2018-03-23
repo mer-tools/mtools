@@ -35,7 +35,7 @@ void label_name(doscp_t *cp, const char *filename, int verbose,
 	int have_lower, have_upper;
 	wchar_t wbuffer[12];
 
-	memset(ans, ' ', sizeof(ans)-1);
+	memset(ans, ' ', sizeof(*ans)-1);
 	ans->sentinel = '\0';
 	len = native_to_wchar(filename, wbuffer, 11, 0, 0);
 	if(len > 11){
