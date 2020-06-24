@@ -4,14 +4,10 @@ Name: mtools
 Version: 0
 Release: 1
 License: GPLv2+
-Group: Applications/System
 Source: %{name}-%{version}.tar.bz2
 Url: http://mtools.linux.lu/
-Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-Requires(post): /sbin/install-info
-Requires(postun): /sbin/install-info
 
-BuildRequires: texinfo, autoconf
+BuildRequires: autoconf
 
 %description
 Mtools is a collection of utilities for accessing MS-DOS files.
@@ -43,17 +39,6 @@ gzip -9f $RPM_BUILD_ROOT/%{_infodir}/*
 
 # We aren't shipping this.
 find $RPM_BUILD_ROOT -name "floppyd*" -exec rm {} \;
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%post
-[ -e %{_infodir}/%{name}.info ] && /sbin/install-info %{_infodir}/%{name}.info %{_infodir}/dir || :;
-
-%preun
-if [ "$1" -eq 0 ]; then
-    [ -e %{_infodir}/%{name}.info ] && /sbin/install-info --delete %{_infodir}/%{name}.info %{_infodir}/dir || :;
-fi
 
 %files
 %defattr(-,root,root)
